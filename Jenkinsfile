@@ -25,7 +25,7 @@ pipeline {
                 cat test.sh
              '''
              sh 'ls'
-             withCredentials([usernamePassword(credentialsId: 'sayanid', passwordVariable: 'pass', usernameVariable: 'user')]) {
+             withCredentials([usernamePassword(credentialsId: 'manishid', passwordVariable: 'pass', usernameVariable: 'user')]) {
              remote.user = user
              remote.password = pass
              sshPut remote: remote, from: "index.html", into: "/tmp"
