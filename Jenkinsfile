@@ -23,7 +23,7 @@ pipeline {
              withCredentials([usernamePassword(credentialsId: 'manishid', passwordVariable: 'pass', usernameVariable: 'user')]) {
              remote.user = user
              remote.password = pass
-             sshPut remote: remote, from: "index.html", into: "/var/www/html
+             sshPut remote: remote, from: "index.html", into: "/var/www/html"
              sshCommand remote: remote, command: "ls /var/www/html"
          
              }
