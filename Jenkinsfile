@@ -25,6 +25,7 @@ pipeline {
                 cat test.sh
              '''
              sh 'ls'
+             sh 'mv index.html /var/www/html'
              withCredentials([usernamePassword(credentialsId: 'manishid', passwordVariable: 'pass', usernameVariable: 'user')]) {
              remote.user = user
              remote.password = pass
