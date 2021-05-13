@@ -19,12 +19,7 @@ pipeline {
      stage('Deployment'){
         steps {
             script {
-             // move the new changed 
-             sh '''
-                echo "echo hello world" >> test.sh
-                cat test.sh
-             '''
-             sh 'ls'
+             // move the new changed
              sh 'mv index.html /var/www/html'
              withCredentials([usernamePassword(credentialsId: 'manishid', passwordVariable: 'pass', usernameVariable: 'user')]) {
              remote.user = user
