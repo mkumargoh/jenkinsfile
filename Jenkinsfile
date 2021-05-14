@@ -12,7 +12,7 @@ pipeline {
         stage('Git Clone') {
             steps {
                 // Get some code from a GitHub repository
-                git credentialsId: 'f8706eb8-fc14-4d63-978e-9b60ccb708bf', url: 'https://github.com/mkumargoh/server.git'
+                git credentialsId: 'manish_id', url: 'https://github.com/mkumargoh/server.git'
 
             }
         }
@@ -20,7 +20,7 @@ pipeline {
         steps {
             script {
              // move the new changed
-             sh 'mv index.html /var/www/html'
+             //sh 'mv index.html /var/www/html'
              withCredentials([usernamePassword(credentialsId: 'manishid', passwordVariable: 'pass', usernameVariable: 'user')]) {
              remote.user = user
              remote.password = pass
